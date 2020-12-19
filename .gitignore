@@ -1,3 +1,6 @@
 ./nextgen/*
 *.o
 *.exe
+*.mles
+*.sles
+

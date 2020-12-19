@@ -1,0 +1,13 @@
+#!/bin/bash
+nNodes=1
+# nCores=$((68*$nNodes))
+nCores=$((12*$nNodes))
+
+fInput='03_charles.in'
+
+fLog='log.test'
+
+# /home/yunjaeh/Codes/nextgen/bin
+mpiexec -n $nCores ./charles.exe -i $fInput | tee $fLog
+
+

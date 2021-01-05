@@ -4,11 +4,12 @@
 1) Thermally driven cavity flow
 ![cavity setup](images/cavity_setup.png)
 
-2) 
-\begin{equation}
+2) $'a^2+b^2=c^2'$
+
+'''math
 Pr = \nu / \alpha \ 
 Sc = g \beta (T_H-T_L) \cdot D^3 / \nu \alpha
-\end{equation}
+'''
 
 3) Reference: 
 

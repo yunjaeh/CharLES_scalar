@@ -1,26 +1,23 @@
-## Thermally driven cavity
+# Thermally driven cavity
 
-### 1. Introduction
-1) Thermally driven cavity flow
+'''
+**Reference**: [Rubio, et al. ""](https://doi.org/10.1016/S0168-9274(01)00083-6)
+'''
+
+## Introduction
+
+### Thermally driven cavity flow
 ![cavity setup](images/cavity_setup.png)
 
-2) Parameters:
-
-Pr =$\nu$ / $\alpha$ \
-Sc = g $\beta$ (T<sub>H</sub>-T<sub>L</sub>) D<sup>3</sup> / ($\nu$ $\alpha$)
-
-
-3) Reference:
-
-### 2. Problem setup
 1) Boussinesq approximation
-2) Pr<sub>t</sub> (Sc<sub>t</sub>) = 0.71
-3) T<sub>L</sub>=0, T<sub>H</sub>=1
-4) 3 different Rayleigh number,
-Ra =
-(10<sup>4</sup>, 10<sup>5</sup>, and 10<sup>6</sup>)
+2) Fixed Prandtl number(*Pr=0.71*,fixed) \
+(Schmidt number (*Sc*) for scalar transport)
+3) Raleigh number (*Ra = (10<sup>4</sup>, 10<sup>5</sup>, and 10<sup>6</sup>*)
+<img src="https://render.githubusercontent.com/render/math?math=Pr=\frac{\nu}{\alpha}">
+<img src="https://render.githubusercontent.com/render/math?math=Ra=\frac{g\beta(T_H-T_L)D^3}{\nu\alpha}">
 
-### 3. Result
+
+### Result
 1) 10<sup>4</sup>
 
 

@@ -17,6 +17,9 @@ Q. Check governing equation?
 ##### Test case to check code works: ![Rayleigh-Benard convection](Rayleigh-Benard/README.md)
 ![RB gif](Rayleigh-Benard/animation.gif)
 
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
+
 ##### Validation case: ![thermally-driven cavity](cavity/)
 $$\Psi \rangle $$
 ### Comments

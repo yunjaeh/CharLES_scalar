@@ -15,12 +15,19 @@ Q. Check governing equation?
 
 ### 1. Add momentum source term (using Boussinesq approximation)
 ##### Test case to check code works: [Rayleigh-Benard convection](Rayleigh-Benard/README.md)
-![RB gif](Rayleigh-Benard/animation.gif)
+1) Rayleigh-Benard convection: higher temperature at the bottom and lower temperature at the top boundary
+2) Instability occurs by temperature gradient
 
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+<img src="Rayleigh-Benard/animation.gif" width=600>
 
 
-##### Validation case: ![thermally-driven cavity](cavity/)
+##### Validation case: [thermally-driven cavity](cavity/)
+1) Cavity flow driven by buoyancy force (temperature difference between walls)
+2) Run cases in different Rayleigh number (10^4, 10^5, 10^6)
+
+<img src="cavity/images/results_Ra_10_6.png" width=600>
+
+
 
 ### Comments
 1. Pressure and temperature coupling (their fluctuation)

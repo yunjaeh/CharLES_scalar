@@ -8,7 +8,7 @@ Q. Check governing equation?
 1. Schmidt number should go denominator (divided)? \
 -> Varying trend of mean scalar profiles is the opposite to as it should be.
 
-![scalar trend](channel_flow/images/scalar_profile_mean.png =100x)
+![scalar trend](channel_flow/images/scalar_profile_mean.png)
     
 -> Add results using updated code
 
@@ -18,8 +18,8 @@ Q. Check governing equation?
 ![RB gif](Rayleigh-Benard/animation.gif)
 
 ##### Validation case: ![thermally-driven cavity](cavity/)
-
+$$\Psi \rangle $$
 ### Comments
-    1. Pressure and temperature coupling
-    2. 
+1. Pressure and temperature coupling (their fluctuation)
+2. 
   

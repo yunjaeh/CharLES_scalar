@@ -25,6 +25,7 @@ Comparison of steady temperature field
 3) _Ra_=10<sup>6</sup>
 <img src="images/ref_isotherm_10_6.png" height="300">
 
+## Time evolution of temperature field
 
 
 

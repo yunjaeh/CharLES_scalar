@@ -1,42 +1,51 @@
-# CharLES Helmholtz solver + Boussinesq approximation \
-(scalar tarnsport equation)
+CharLES Helmholtz solver + Boussinesq approximation 
+(scalar transport equation)
+----
+- The objective is to check validity of using Helmholtz solver with scalar transport equation instead of ideal-gas solver, which solves for full temperature field (more expensive). 
+- Boussinesq approximation is used to include momentum 
+- First step is the validation of original solver (without buoyancy force), and the second step includes buoyancy effect
 
-## 0. original solver + wall boundary condition for scalar
-### validation case: [turbulent channel flow](channel_flow/)
+**Comments**
+- Pressure and temperature coupling (their fluctuation)
 
-1. Schmidt number should go denominator (divided)? \
--> Varying trend of mean scalar profiles is the opposite to as it should be.
-<img src="channel_flow/images/scalar_profile_mean.png" width=600>
 
-Updated results:
+## 1. Original solver + wall boundary condition for scalar
 
-code modification:
+**validation case: [turbulent channel flow](channel_flow/)**
+Reference: 
+1. Paper & data
+2. Cascade webpage
 
-    **HelmholtzSolver.cpp & HelmholtzSolverBCs.cpp **
-    Modify scalar transport equation part:
+Result using origial code:
+
+<img src="channel_flow/images/scalar_profile_mean.png" width=300>
+
+- Varying trend of mean scalar profiles is the opposite to as it should be \
+-> Schmidt number should go denominator instead of numerator? 
+
+Results using updated code:
+
+Modified codes:
+1. **HelmholtzSolver.cpp & HelmholtzSolverBCs.cpp**
+    Modify scalar transport equation part, \
     Schmidt number is divided instead of being multiplied     
+2. **FlowSolver.hpp**
+    Initial value of Schmidt number is set to 1.0 (originally 0.0),\
+    to avoid errors due to zero division
 
-    **FlowSolver.hpp**
-    Initial value of Schmidt number from 0.0 to 1.0 \
-    to avoid errors when a scalar is initialized
+## 2. Add momentum source term (Boussinesq approximation)
+**Test case to check code works: [Rayleigh-Benard convection](Rayleigh-Benard/)**
+- Rayleigh-Benard convection: higher temperature at the bottom and lower temperature at the top boundary
+- Instability occurs by temperature gradient in reverse to the gravity
 
-
-## 1. Add momentum source term (using Boussinesq approximation)
-### Test case to check code works: [Rayleigh-Benard convection](Rayleigh-Benard/README.md)
-1) Rayleigh-Benard convection: higher temperature at the bottom and lower temperature at the top boundary
-2) Instability occurs by temperature gradient
-
-<img src="Rayleigh-Benard/animation.gif" width=600>
+<img src="Rayleigh-Benard/animation.gif" width=400>
 
 
-##### Validation case: [thermally-driven cavity](cavity/)
+**Validation case: [thermally-driven cavity](cavity/)**
 1) Cavity flow driven by buoyancy force (temperature difference between walls)
-2) Run cases in different Rayleigh number (10^4, 10^5, 10^6)
+2) Run cases in different Rayleigh number (10<sup>4</sup>, 10<sup>5</sup>, 10<sup>6</sup>)
 
-<img src="cavity/images/results_Ra_10_6.png" width=600>
+<img src="cavity/images/results_Ra_10_6.png" width=700>
 
 
-### Comments
-1. Pressure and temperature coupling (their fluctuation)
- 
-  
+

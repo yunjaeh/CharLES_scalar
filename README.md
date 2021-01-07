@@ -1,4 +1,5 @@
-# CharLES Helmholtz solver + Boussinesq approximation (scalar tarnsport equation)
+# CharLES Helmholtz solver + Boussinesq approximation \
+(scalar tarnsport equation)
 
 ## 0. original solver + wall boundary condition for scalar
 ### validation case: [turbulent channel flow](channel_flow/)
@@ -9,8 +10,8 @@
 
 Updated results:
 
-
 code modification:
+
     **HelmholtzSolver.cpp & HelmholtzSolverBCs.cpp **
     Modify scalar transport equation part:
     Schmidt number is divided instead of being multiplied     
@@ -37,5 +38,5 @@ code modification:
 
 ### Comments
 1. Pressure and temperature coupling (their fluctuation)
-2. 
+ 
   

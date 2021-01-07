@@ -18,12 +18,14 @@ Reference:
 
 Result using origial code:
 
-<img src="channel_flow/images/scalar_profile_mean.png" width=300>
+<img src="channel_flow/images/orig_scalar_profile_mean.png" width=300>
 
 - Varying trend of mean scalar profiles is the opposite to as it should be \
 -> Schmidt number should go denominator instead of numerator? 
 
 Results using updated code:
+
+<img src="channel_flow/images/update_scalar_profile_mean.png" width=300>
 
 Modified codes:
 1. **HelmholtzSolver.cpp & HelmholtzSolverBCs.cpp**

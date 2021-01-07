@@ -4,3 +4,4 @@
 *.mles
 *.sles
 log.*
+./*/output/*

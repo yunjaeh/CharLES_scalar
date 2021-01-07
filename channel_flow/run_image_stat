@@ -1,0 +1,24 @@
+#!/bin/bash
+
+mkdir ./stats/
+
+path="images"
+ls ${path}/U.* > imglist.U
+ls ${path}/V.* > imglist.V
+ls ${path}/W.* > imglist.W
+ls ${path}/CT.* > imglist.CT
+
+
+# $HOME/nextgen/bin/ping_s.exe --IMAGES ./*.png --DUMP_DATA
+
+$HOME/CharLES/nextgen/bin/ping_s.exe --IMAGELIST imglist.U --TEMPORAL_STATS ./stats
+$HOME/CharLES/nextgen/bin/ping_s.exe --IMAGELIST imglist.V --TEMPORAL_STATS ./stats
+$HOME/CharLES/nextgen/bin/ping_s.exe --IMAGELIST imglist.W --TEMPORAL_STATS ./stats
+$HOME/CharLES/nextgen/bin/ping_s.exe --IMAGELIST imglist.CT --TEMPORAL_STATS ./stats
+
+$HOME/CharLES/nextgen/bin/ping_s.exe --IMAGES ./stats/*.png --DUMP_DATA
+
+mv imglist.* ./stats/
+mv *.raw_values.dat ./stats/
+
+

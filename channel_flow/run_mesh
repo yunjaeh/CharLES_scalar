@@ -3,7 +3,6 @@ nNodes=1
 # nCores=$((68*$nNodes))
 nCores=$((12*$nNodes))
 
-
-mpiexec -n $nCores /home/yunjaeh/CharLES/nextgen_dev/bin/stitch.exe -i 02_stitch.in | tee log.stitch
-
+# /home/yunjaeh/Codes/nextgen/bin
+mpiexec -n $nCores /home/yunjaeh/CharLES/nextgen_dev/bin/stitch.exe | tee log.stitch
 

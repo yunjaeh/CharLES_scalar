@@ -4,4 +4,6 @@
 *.mles
 *.sles
 log.*
-./*/output/*
+cavity/output/*
+channel_flow/output/*
+

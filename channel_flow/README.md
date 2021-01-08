@@ -2,8 +2,9 @@
 
 **References**
 
-1. [DNS data](https://turbulence.oden.utexas.edu/data/MKM/chan395/profiles/)
+1. [DNS data (for flow field)](https://turbulence.oden.utexas.edu/data/MKM/chan395/profiles/)
 2. [Cascade webpage (using ideal gas solver)](https://support.cascadetechnologies.com/posts/1968-turbulent-channel)
+3. Mean scalar profiles from (Re_tau = 180): [Dong, et al "An investigation of the Prandtl number effect on turbulent heat transfer in channel flows by large eddy simulation"](https://link.springer.com/article/10.1007/BF01171446)
 
 ---
 
@@ -17,9 +18,13 @@
 
 - Scalar field
 
+<img src="images/reference_scalar_profile.png" width=700>
 
+<center>Figure. reference profile [3] </center>
 
+<img src="images/scalar_update.png" width=500>
 
+<center>Figure. CharLES result </center>
 
 ### Minor correction in source code 
 

@@ -1,9 +1,10 @@
-./nextgen/*
+nextgen
+output
+
 *.o
 *.exe
 *.mles
 *.sles
 log.*
-output
 
 

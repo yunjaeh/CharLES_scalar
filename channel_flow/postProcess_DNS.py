@@ -25,16 +25,15 @@ U_rms = np.loadtxt(fPath+'U.rms.collapse_width.dat')
 # W_rms = np.loadtxt(fPath+'W.rms.collapse_width.dat')
 
 fig, [ax1,ax2] = plt.subplots(ncols=2, figsize=(12,5))
-ax1.plot(U_mean[:,5],U_mean[:,3],'r')
-ax1.plot([means[:,2], means[:,2]], [-1+means[:,0],1-means[:,0]],'bx')
-ax1.set(xlabel='U_mean',ylabel='y: channel height')
+ax1.plot(U_mean[:,3],U_mean[:,5],'r')
+ax1.plot([-1+means[:,0],1-means[:,0]],[means[:,2], means[:,2]],'bx')
+ax1.set(xlabel='y: channel height', ylabel='U_mean')
 ax1.legend(['CharLES','DNS'])
 
 
-ax2.plot(U_rms[:,5],U_rms[:,3],'r')
-ax2.plot(np.sqrt(reys[:,2]), -1+reys[:,0],'bx')
-ax2.plot(np.sqrt(reys[:,2]),  1-reys[:,0],'bx')
-ax2.set(xlabel='U_rms',ylabel='y: channel height')
+ax2.plot(U_rms[:,3],U_rms[:,5],'r')
+ax2.plot([-1+reys[:,0],1-reys[:,0]],np.sqrt([reys[:,2], reys[:,2]]),'bx')
+ax2.set(xlabel='y: channel height', ylabel='U_rms')
 fig.savefig('images/vel_mean_rms.png')
 
 

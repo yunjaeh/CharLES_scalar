@@ -15,18 +15,39 @@
 ### Comparison to other simulation results
 
 - Velocity profiles \
-  comparison to DNS data (Re_tau = 395 for both)
+  - comparison to DNS data (Re_tau = 395 for both)
+  - Discrepancy in mean velocity: momentum loss due to wall friction
+    (arbitrary) momentum source is added in the validation of CharLES Ideal gas solver, 
 
-  <img src="images/vel_mean_rms.png" width=700>
 
-  
 
-  <center>Figure. comparison of velocity profiles</center>
+'''
 
-  
+rhs[icv].rhou[0] += factor\*vol_cv[icv]\*rho[icv];
+
+'''
+
+- 
+
+
+
+<img src="images/vel_mean_rms.png" width=700>
+
+
+
+<center>Figure. comparison of velocity profiles</center>
+
+
 
 - Scalar field \
-  : Re tau = 180 for reference data
+  
+  - Re tau = 180 for reference data, Re tau = 395 for ChaLES result
+  
+  - Lower Prandtl number (Schmidt number) -> almost linearly varies in channel height
+  
+  - Higher Prandtl number (Schmidt number) -> strong gradient near wall and small variation in the channel 
+  
+    
 
 <img src="images/reference_scalar_profile.png" width=700>
 

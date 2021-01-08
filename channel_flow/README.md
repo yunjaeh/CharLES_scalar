@@ -17,17 +17,12 @@
 - Velocity profiles \
   - comparison to DNS data (Re_tau = 395 for both)
   - Discrepancy in mean velocity: momentum loss due to wall friction
-    (arbitrary) momentum source is added in the validation of CharLES Ideal gas solver, 
+    (arbitrary) momentum source is added in the validation of CharLES Ideal gas solver
+  
 
 
 
-'''
-
-rhs[icv].rhou[0] += factor\*vol_cv[icv]\*rho[icv];
-
-'''
-
-- 
+​	rhs[icv].rhou[0] += factor\*vol_cv[icv]\*rho[icv];
 
 
 

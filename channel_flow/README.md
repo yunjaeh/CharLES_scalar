@@ -11,9 +11,7 @@
 
 - Velocity field
 
-  <img src="images/mean_Ux.png" width=300>
-
-  <img src="images/rms_Uxvw.png" width=1200>
+  <img src="images/vel_mean_rms.png" width=700>
 
   <center>Figure. comparison of velocity profiles</center>
 
@@ -41,11 +39,11 @@
 
 - Results
 
-<img src="images/orig_scalar_profile_mean.png" width=500>
+<img src="images/scalar_orig.png" width=500>
 
 <center> Figure: result using origial code </center>
 
-<img src="images/update_scalar_profile_mean.png" width=500>
+<img src="images/scalar_update.png" width=500>
 
 <center> Figure: result using updated code </center>
 

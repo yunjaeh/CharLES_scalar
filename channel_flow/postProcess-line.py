@@ -16,8 +16,8 @@ Sc_list = ['0.1', '0.7', '1.0', '10.0']
 
 y, Ux, Uy, Uz, CT =dict(), dict(), dict(), dict(), dict()
 
-fCase='orig'
-# fCase='update'
+# fCase='orig'
+fCase='update'
 
 for Sc in Sc_list:
     fPath='./results_'+fCase+'/Sc_'+Sc+'/probes/'

@@ -1,0 +1,17 @@
+#!/bin/bash
+nNodes=1
+# nCores=$((68*$nNodes))
+nCores=$((12*$nNodes))
+
+# fInput='charles1.in'
+# fLog='log.charles1'
+# mpiexec -n $nCores ./charles.exe -i $fInput| tee $fLog
+
+fInput='charles2.in'
+fLog='log.charles2'
+mpiexec -n $nCores ./charles.exe -i $fInput | tee $fLog
+
+
+
+# mpiexec -n $nCores ./charles.exe -i $fInput | tee $fLog
+

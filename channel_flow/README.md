@@ -1,3 +1,7 @@
+
+
+
+
 # Turbulent channel flow
 
 **References**
@@ -10,21 +14,39 @@
 
 ### Comparison to other simulation results
 
-- Velocity field
+- Velocity profiles \
+  comparison to DNS data (Re_tau = 395 for both)
 
   <img src="images/vel_mean_rms.png" width=700>
 
+  
+
   <center>Figure. comparison of velocity profiles</center>
 
-- Scalar field
+  
+
+- Scalar field \
+  : Re tau = 180 for reference data
 
 <img src="images/reference_scalar_profile.png" width=700>
 
+
+
 <center>Figure. reference profile [3] </center>
+
+
 
 <img src="images/scalar_update.png" width=500>
 
+
+
 <center>Figure. CharLES result </center>
+
+
+
+
+
+---
 
 ### Minor correction in source code 
 
@@ -46,7 +68,11 @@
 
 <img src="images/scalar_orig.png" width=500>
 
+
+
 <center> Figure: result using origial code </center>
+
+
 
 <img src="images/scalar_update.png" width=500>
 

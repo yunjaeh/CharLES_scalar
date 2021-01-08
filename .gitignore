@@ -1,5 +1,6 @@
 nextgen
 output
+test
 
 *.o
 *.exe

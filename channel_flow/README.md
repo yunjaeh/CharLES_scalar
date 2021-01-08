@@ -14,15 +14,12 @@
 
 ### Comparison to other simulation results
 
-- Velocity profiles \
+- Velocity profiles 
   - comparison to DNS data (Re_tau = 395 for both)
-  - Discrepancy in mean velocity: momentum loss due to wall friction
-    (arbitrary) momentum source is added in the validation of CharLES Ideal gas solver
+  - Discrepancy in mean velocity: momentum loss due to wall friction \
+    (arbitrary) momentum source is added in the validation of CharLES Ideal gas solver \
+    : rhs[icv].rhou[0] += factor\*vol_cv[icv]\*rho[icv];
   
-
-
-
-​	rhs[icv].rhou[0] += factor\*vol_cv[icv]\*rho[icv];
 
 
 
@@ -34,7 +31,7 @@
 
 
 
-- Scalar field \
+- Scalar field 
   
   - Re tau = 180 for reference data, Re tau = 395 for ChaLES result
   
@@ -71,7 +68,7 @@
 
 - Modified codes
 
-  1. **HelmholtzSolver.cpp & HelmholtzSolverBCs.cpp**
+  1. **HelmholtzSolver.cpp & HelmholtzSolverBCs.cpp** \
      Modify scalar transport equation part, \
      Schmidt number is divided instead of being multiplied     
 

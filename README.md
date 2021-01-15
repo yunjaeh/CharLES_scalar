@@ -48,3 +48,14 @@ CharLES Helmholtz solver + Boussinesq approximation
 
 
 
+**Validation case: [Vertical turbulent channel flow](vertical_channel/)**
+
+- Vertical channel frow driven by gravitational force (buoyancy) (temperature difference between walls)
+- Run different Rayleigh numbers (Reference results available: DNS case)
+
+<img src="vertical_channel/results/T.gif" width=600>
+
+<center>Figure: temperature field, Ra=5.4x10<sup>5</sup></center>
+
+
+

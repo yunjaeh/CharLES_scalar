@@ -15,11 +15,11 @@ T.SC_T = 1/0.71
 
 # set the initial condition
 # INIT CT 0.5
-INIT time=45 step=5000
+INIT time=0 step=1
 
 RESTART ./mesh.mles
-INTERP_FROM_RESTART ./result.00005000.sles
-WRITE_RESULT INTERVAL=500
+INTERP_FROM_RESTART ./result.sles
+WRITE_RESULT INTERVAL=1000
 
 # set the time stepping
 TIMESTEP DT 0.01

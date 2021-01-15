@@ -7,8 +7,8 @@
 # LZ calculated to ensure 'perfect periodicity'
 DEFINE LX 0.5
 
-# DEFINE NX 32 # fine
-DEFINE NX 16 # coarse
+DEFINE NX 24 # fine
+# DEFINE NX 16 # coarse
 
 DEFINE DELTA ($(LX)/$(NX))
 

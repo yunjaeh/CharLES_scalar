@@ -1,0 +1,61 @@
+# SIMPLE_RESTART CART 0 32 -1 1 -1 1 128 64 64
+# INTERP_FROM_RESTART ./result.sles
+VERBOSE
+DEFINE MY_INTERVAL 10
+# equation of state ..
+
+# register a single scalar that blows in ..
+REGISTER_SCALAR T
+T.SC_LAM = 0.71
+T.SC_T = 0.71
+
+# also register a residence time scalar
+# REGISTER_SCALAR RES_TIME
+# INIT RES_TIME 0.0
+
+# set the initial condition
+# INIT CT 0.5
+INIT time=0 step=0
+
+RESTART ../mesh_coarse.mles
+# INTERP_FROM_RESTART ./result.sles
+WRITE_RESULT INTERVAL=1000
+
+# set the time stepping
+TIMESTEP DT 0.01
+# TIMESTEP CFL 1.2
+NSTEPS 10000 
+CHECK_INTERVAL 1
+
+EOS HELMHOLTZ
+SGS_MODEL VREMAN 
+# RHO 1.225
+# MU 1.789e-5
+# HELMHOLTZ_SOS 340
+RHO 1.0
+# MU 2.114e-4	# Ra = 5.4e5
+MU 6.948e-5	# Ra = 5.0e6
+HELMHOLTZ_SOS 340
+
+# boundary conditions 
+x0 WALL T -0.5
+x1 WALL T  0.5
+
+CONDITIONAL_PROBE NAME output/cprobes/uvwpT INTERVAL 1000 SAMPLE_INTERVAL 1000 CVAR comp(x_cv,0) VARS comp(u,0) comp(u,1) comp(u,2) p T
+
+# show some diagnostics ..
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/vertical/T GEOM Z_PLANE_FRAC 0.5 VAR T
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/vertical/U GEOM Z_PLANE_FRAC 0.5 VAR comp(u,0)
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/vertical/V GEOM Z_PLANE_FRAC 0.5 VAR comp(u,1)
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/vertical/W GEOM Z_PLANE_FRAC 0.5 VAR comp(u,2)
+
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/normal/T GEOM X_PLANE_FRAC 0.5 VAR T
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/normal/U GEOM X_PLANE_FRAC 0.5 VAR comp(u,0)
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/normal/V GEOM X_PLANE_FRAC 0.5 VAR comp(u,1)
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/normal/W GEOM X_PLANE_FRAC 0.5 VAR comp(u,2)
+
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/horizontal/T GEOM Y_PLANE_FRAC 0.5 VAR T
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/horizontal/U GEOM Y_PLANE_FRAC 0.5 VAR comp(u,0)
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/horizontal/V GEOM Y_PLANE_FRAC 0.5 VAR comp(u,1)
+WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME output/horizontal/W GEOM Y_PLANE_FRAC 0.5 VAR comp(u,2)
+

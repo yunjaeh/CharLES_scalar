@@ -6,8 +6,8 @@ DEFINE MY_INTERVAL 10
 
 # register a single scalar that blows in ..
 REGISTER_SCALAR T
-T.SC_LAM = 1/0.71
-T.SC_T = 1/0.71
+T.SC_LAM = 0.71
+T.SC_T = 0.71
 
 # also register a residence time scalar
 # REGISTER_SCALAR RES_TIME
@@ -33,14 +33,15 @@ SGS_MODEL VREMAN
 # MU 1.789e-5
 # HELMHOLTZ_SOS 340
 RHO 1.0
-MU 0.67e-3
+MU 2.114e-4	# Ra = 5.4e5
+MU 6.948e-5	# Ra = 5.0e6
 HELMHOLTZ_SOS 340
 
 # boundary conditions 
 x0 WALL T -0.5
 x1 WALL T  0.5
 
-CONDITIONAL_PROBE NAME out/cprobes/uvwpT INTERVAL 1000 SAMPLE_INTERVAL $(MY_INTERVAL) CVAR comp(x_cv,0) VARS comp(u,0) comp(u,1) comp(u,2) p T
+CONDITIONAL_PROBE NAME out/cprobes/uvwpT INTERVAL 1000 SAMPLE_INTERVAL 1000 CVAR comp(x_cv,0) VARS comp(u,0) comp(u,1) comp(u,2) p T
 
 # show some diagnostics ..
 WRITE_IMAGE INTERVAL $(MY_INTERVAL) NAME out/vertical/T GEOM Z_PLANE_FRAC 0.5 VAR T

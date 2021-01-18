@@ -80,7 +80,7 @@ public:
 
       const double T_ref = 0.0;
       const double beta = 0.0034; 
-      const double g = 100;
+      const double g = 10;
       const double factor = 1.0;
 
 //      transport_scalar_vec[0][icv]=50.0;

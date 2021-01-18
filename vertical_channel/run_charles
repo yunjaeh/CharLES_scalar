@@ -1,7 +1,7 @@
 #!/bin/bash
-nNodes=1
-# nCores=$((68*$nNodes))
-nCores=$((12*$nNodes))
+nNodes=2
+nCores=$((68*$nNodes))
+# nCores=$((12*$nNodes))
 
 fInput='charles.in'
 fLog='log.test'

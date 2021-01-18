@@ -24,6 +24,7 @@ Reference:
 | Ra                    | g    | beta   | T<sub>H</sub>-T<sub>L</sub> | d (h) | nu                       |
 | --------------------- | ---- | ------ | --------------------------- | ----- | ------------------------ |
 | 5.4 x 10 <sup>5</sup> | 10   | 0.0034 | 1                           | 1     | 2.114 x 10 <sup>-4</sup> |
+| 2.0 x 10 <sup>6</sup> | 10   | 0.0034 | 1                           | 1     | 1.099 x 10 <sup>-4</sup> |
 | 5.0 x 10 <sup>6</sup> | 10   | 0.0034 | 1                           | 1     | 6.948 x 10 <sup>-5</sup> |
 
 
@@ -59,3 +60,4 @@ Reference:
 <img src="results/U_rms.png" width="400">
 
 <center>Figure. Time averaged Reynolds stresses.</center>
+

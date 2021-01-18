@@ -7,11 +7,11 @@
 # LZ calculated to ensure 'perfect periodicity'
 DEFINE LX 0.5
 
-DEFINE NX 24 # fine
-# DEFINE NX 16 # coarse
+# DEFINE NX 24 # fine
+DEFINE NX 12 # coarse
+
 
 DEFINE DELTA ($(LX)/$(NX))
-
 
 # Define channel as a box geometry with previously defined measures
 # set periodicity in x and z direction (walls are in y direction)
@@ -34,7 +34,8 @@ SMOOTH_MODE ALL
 NSMOOTH 10
 
 # Write the mesh file
-WRITE_RESTART mesh.mles
+# WRITE_RESTART mesh.mles
+WRITE_RESTART mesh_coarse.mles
 
 # Output images for quality control    
 WRITE_IMAGE NAME=iso_box GEOM=PLANE 2 1.4 1.0 1 0.7 0.5 SIZE 1000 1000 VAR=3d_mesh MESH_ON_SURFACE

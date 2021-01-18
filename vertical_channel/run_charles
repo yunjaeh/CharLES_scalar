@@ -3,8 +3,8 @@ nNodes=2
 nCores=$((68*$nNodes))
 # nCores=$((12*$nNodes))
 
-fInput='charles.in'
-fLog='log.test'
+fInput='charles_Ra_5.4e5.in'
+fLog='log.Ra5.4e5'
 
 mpiexec -n $nCores ./charles.exe -i $fInput | tee $fLog
 # mpiexec -n $nCores ./charles.exe -i $fInput | tee $fLog

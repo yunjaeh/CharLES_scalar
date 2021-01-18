@@ -16,9 +16,19 @@ Reference:
 
 ## Problem setup
 
-- Prandtl number= 0.71
-- Rayleigh number = 5.4e5
-- Domain (d x 12d x 6d, d: channel height), periodic in Y & Z directions
+- Prandtl number, <img src="https://render.githubusercontent.com/render/math?math=Pr=\frac{\nu}{\alpha}=0.71" height="30">,
+- Rayleigh number, <img src="https://render.githubusercontent.com/render/math?math=Ra=\frac{g\beta(T_H-T_L)d^3}{\nu\alpha}=\frac{g\beta(T_H-T_L)d^3}{\nu^2}\cdot Pr" height="40">
+
+
+
+| Ra                    | g    | beta   | T<sub>H</sub>-T<sub>L</sub> | d (h) | nu                       |
+| --------------------- | ---- | ------ | --------------------------- | ----- | ------------------------ |
+| 5.4 x 10 <sup>5</sup> | 10   | 0.0034 | 1                           | 1     | 2.114 x 10 <sup>-4</sup> |
+| 5.0 x 10 <sup>6</sup> | 10   | 0.0034 | 1                           | 1     | 6.948 x 10 <sup>-5</sup> |
+
+
+
+- Domain (d x 12d x 6d, d: channel height), periodic in Y & Z directions -> profiles depend on domain size
 - \# cells: 13.3M
 
 <img src="results/setup.jpg" width="200">

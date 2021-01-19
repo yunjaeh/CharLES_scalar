@@ -1,5 +1,5 @@
 #!/bin/bash
-nNodes=2
+nNodes=4
 nCores=$((68*$nNodes))
 # nCores=$((12*$nNodes))
 

@@ -15,16 +15,16 @@ T.SC_T = 0.71
 
 # set the initial condition
 # INIT CT 0.5
-INIT time=0 step=0
+INIT time=40 step=4000
 
 RESTART ../mesh_coarse.mles
-# INTERP_FROM_RESTART ./result.sles
+INTERP_FROM_RESTART ./result.sles
 WRITE_RESULT INTERVAL=1000
 
 # set the time stepping
 TIMESTEP DT 0.01
 # TIMESTEP CFL 1.2
-NSTEPS 10000 
+NSTEPS 20000 
 CHECK_INTERVAL 1
 
 # STATS u p T

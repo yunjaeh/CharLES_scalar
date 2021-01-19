@@ -1,11 +1,11 @@
 #!/bin/bash
-nNodes=2
+nNodes=4
 nCores=$((68*$nNodes))
 # nCores=$((12*$nNodes))
 
-fInput='charles_Ra_5.4e5.in'
-fLog='log.Ra5.4e5'
+fInput='charles_coarse2.in'
+fLog='log.init2'
 
-mpiexec -n $nCores ./charles.exe -i $fInput | tee $fLog
+mpiexec -n $nCores ../charles.exe -i $fInput | tee $fLog
 # mpiexec -n $nCores ./charles.exe -i $fInput | tee $fLog
 

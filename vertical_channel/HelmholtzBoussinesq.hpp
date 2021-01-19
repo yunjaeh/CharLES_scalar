@@ -82,6 +82,9 @@ public:
       const double beta = 0.0034; 
       const double g = 10;
       const double factor = 1.0;
+    
+    if ( mpi_rank == 0 ) 
+      cout << ">>>>> T_ref= "<< T_ref << ", beta= "<<beta << ", g="<< g << endl;
 
 //      transport_scalar_vec[0][icv]=50.0;
       FOR_ICV{

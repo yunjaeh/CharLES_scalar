@@ -23,16 +23,16 @@ Rayleigh= g*beta*dT*h**3.0 / (nu*alpha)
 Ra_case = ['5.4e5','2.0e6','5.0e6']
 
 #%%
-print(Ra)
 tick_list=np.arange(-0.5,0.51,0.1)
 
-step=21000
+step=27000
 
 fPath = '/home/yunjaeh/Codes/CharLES_scalar/vertical_channel/'
 y, U, T = dict(), dict(), dict()
 u_rms, v_rms, w_rms = dict(), dict(), dict()
 
 for Ra in Ra_case:
+    print(Ra)
     data = np.loadtxt(fPath+'Ra_'+Ra+
                       '/output/cprobes/uvwpT.'+str(step).zfill(8)+'.cp')
     y[(Ra,step)] = data[:,2]
@@ -55,12 +55,13 @@ ax.grid()
 ax.set(xlim=(-0.5,0.5), xlabel='x', xticks=ticks_channel,
        ylim=(-0.5,0.5), ylabel='T', yticks=ticks_channel)
 
-
 # velocity profile
 fig, ax = plt.subplots(nrows=1, figsize=(5,4))    
 for i, Ra in enumerate(Ra_case):
     print(i, Ra)
-    ax.plot(y[(Ra,step)],U[(Ra,step)]*h/alpha[i])
+    ax.plot(y[(Ra,step)],U[(Ra,step)]*h/alpha[i],[i])
+
+    
 ax.legend(Ra_case)
 ax.grid()
 ax.set(xlabel='x', ylabel='U h / alpha', 
@@ -70,14 +71,34 @@ ax.set(xlabel='x', ylabel='U h / alpha',
 
 #%% half profiles 
 
-for step in step_list:
-    axes[0].plot(y[step],T[step])
-    axes[1].plot(y[step],U[step]*h/alpha)
-   
-for ax in axes:
-    
-axes[0].set(ylabel='T')
-axes[1].set(ylabel='Uh/alpha')
+fig, ax = plt.subplots(nrows=1, figsize=(5,4))
+cid='rbk'
+for i, Ra in enumerate(Ra_case):
+    ax.plot(y[(Ra,step)],-T[(Ra,step)],cid[i])
+for i, Ra in enumerate(Ra_case):    
+    ax.plot(-y[(Ra,step)]+0.5,T[(Ra,step)],cid[i])
+ax.set(xlabel='x', ylabel='T',
+       xlim=(0,0.5), ylim=(0,0.5))
+ax.grid()
+ax.legend(Ra_case)
+
+cid='rbk'
+ig, ax = plt.subplots(nrows=1, figsize=(5,4))
+for i, Ra in enumerate(Ra_case):
+    print(i, Ra)
+    ax.plot(y[(Ra,step)]+0.5,-U[(Ra,step)], cid[i])
+    # ax.plot(y[(Ra,step)]+0.5,-U[(Ra,step)]*h/alpha[i], cid[i])
+for i, Ra in enumerate(Ra_case):
+    ax.plot(-y[(Ra,step)]+0.5,U[(Ra,step)], cid[i])
+    # ax.plot(-y[(Ra,step)]+0.5,U[(Ra,step)]*h/alpha[i], cid[i])
+
+ax.set(xlabel='x', ylabel='U',
+        xlim=(0,0.5) , ylim=(0,0.1))
+ax.set(xlabel='x', ylabel='U h /alpha ',
+       # xlim=(0,0.5) , ylim=(0,1000), yticks=range(0,1001,100))
+ax.grid()
+ax.legend(Ra_case)
+
     
 
 # %% temperature and velocity half profiles

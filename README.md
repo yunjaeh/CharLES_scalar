@@ -53,9 +53,9 @@ CharLES Helmholtz solver + Boussinesq approximation
 - Vertical channel frow driven by gravitational force (buoyancy) (temperature difference between walls)
 - Run different Rayleigh numbers (Reference results available: DNS case)
 
-<img src="vertical_channel/results/T_animation.gif" width=600>
+<img src="vertical_channel/results/V_Ra_5.4e5.gif" width=400> <img src="vertical_channel/results/T_Ra_5.4e5.gif" width=400>
 
-<center>Figure: temperature field, Ra=5.4x10<sup>5</sup></center>
+<center>Figure: Time evolution of velocity and temperature fields, Ra=5.4x10<sup>5</sup></center>
 
 
 

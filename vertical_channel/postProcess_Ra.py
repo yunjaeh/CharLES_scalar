@@ -69,21 +69,45 @@ ax.set(xlabel='x', ylabel='U h / alpha',
        xlim=(-0.5,0.5), ylim=(-1000,1000))
 
 
-#%% half profiles 
+#%% half profiles (mean)
 
 fig, ax = plt.subplots(nrows=1, figsize=(5,4))
 cid='rbk'
 for i, Ra in enumerate(Ra_case):
-    ax.plot(y[(Ra,step)],-T[(Ra,step)],cid[i])
+    ax.plot(y[(Ra,step)]+0.5,-T[(Ra,step)],cid[i])
+# fig, ax = plt.subplots(nrows=1, figsize=(5,4))
 for i, Ra in enumerate(Ra_case):    
-    ax.plot(-y[(Ra,step)]+0.5,T[(Ra,step)],cid[i])
+    ax.plot(-y[(Ra,step)]+0.5,T[(Ra,step)],cid[i]+'.')
 ax.set(xlabel='x', ylabel='T',
-       xlim=(0,0.5), ylim=(0,0.5))
+        xlim=(0,0.5), ylim=(0,0.5))
 ax.grid()
 ax.legend(Ra_case)
 
+#%% 
 cid='rbk'
-ig, ax = plt.subplots(nrows=1, figsize=(5,4))
+y_interp = np.arange(0,0.5,0.005)
+
+fig, ax = plt.subplots(nrows=1, figsize=(5,4))
+for i, Ra in enumerate(Ra_case):
+    half_len_y = int(len(y[(Ra,step)])/2)
+    print(half_len_y)
+    interp_left = np.interp(y_interp,
+                    y[(Ra,step)][0:half_len_y]+0.5, -U[(Ra,step)][0:half_len_y])
+    interp_right = np.interp(y_interp,
+                    np.flip(-y[(Ra,step)][half_len_x:-1]+0.5), np.flip(U[(Ra,step)][half_len_x:-1]))
+    # ax.plot(y_interp,interp_left,'r.')
+    # ax.plot(y_interp,interp_right,'b.')
+    ax.plot(y_interp, (interp_left+interp_right)/2.0*h/alpha[i],cid[i])
+
+ax.set(xlabel='x', ylabel='U',
+        xlim=(0,0.5) , ylim=(0,1000), yticks=range(0,1001,100))
+ax.grid()
+ax.legend(Ra_case)
+    
+
+#%%
+
+fig, ax = plt.subplots(nrows=1, figsize=(5,4))
 for i, Ra in enumerate(Ra_case):
     print(i, Ra)
     ax.plot(y[(Ra,step)]+0.5,-U[(Ra,step)], cid[i])
@@ -94,14 +118,14 @@ for i, Ra in enumerate(Ra_case):
 
 ax.set(xlabel='x', ylabel='U',
         xlim=(0,0.5) , ylim=(0,0.1))
-ax.set(xlabel='x', ylabel='U h /alpha ',
+# ax.set(xlabel='x', ylabel='U h /alpha ',
        # xlim=(0,0.5) , ylim=(0,1000), yticks=range(0,1001,100))
 ax.grid()
 ax.legend(Ra_case)
 
     
 
-# %% temperature and velocity half profiles
+# %% half profile, RMS velocity
 
 cid='rbk'
 fig, ax = plt.subplots(figsize=(6,4))

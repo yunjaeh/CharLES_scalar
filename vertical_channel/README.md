@@ -8,21 +8,18 @@
 - [3. Versteegh, T. A. M., and F. T. M. Nieuwstadt. "A direct numerical simulation of natural convection between two infinite vertical differentially heated walls scaling laws and wall functions." *International Journal of Heat and Mass Transfer* 42.19 (1999): 3673-3693.](https://reader.elsevier.com/reader/sd/pii/S001793109900037X?token=1255F157B1237FF80BE72E1969979A48363BC5ED7068B130E09134E6B2F3E8150DEE222C3DC0C890311987C23F5A0A72)
 ---
 
-### Velocity and temperature fields
+## Velocity and temperature fields
 
-
+**Rayleigh number = 5.4 x 10<sup>5</sup>**
 <img src="results/V_Ra_5.4e5.gif" width="400">  <img src="results/T_Ra_5.4e5.gif" width="400">
-<center>Rayleigh number = 5.4 x 10<sup>5</sup></center>
 
 
-
+**Rayleigh number = 2.0 x 10<sup>6</sup>**
 <img src="results/V_Ra_2.0e6.gif" width="400">  <img src="results/T_Ra_2.0e6.gif" width="400">
-<center>Rayleigh number = 2.0 x 10<sup>6</sup></center>
 
 
-
+**Rayleigh number = 5.0 x 10<sup>6</sup>**
 <img src="results/V_Ra_5.0e6.gif" width="400">  <img src="results/T_Ra_5.0e6.gif" width="400">
-<center>Rayleigh number = 5.0 x 10<sup>6</sup></center>
 
 
 
@@ -32,6 +29,7 @@
 ## Problem setup
 
 <img src="results/setup.jpg" width="200">
+
 <center>Figure. setup of vertical channel flow simulation</center>
 
 
@@ -54,25 +52,23 @@
 
 ## Results
 
-**reference results using DNS**: Pallares, et al.[1]
+**Reference results using DNS**: [3] Versteegh, T. A. M., and F. T. M. Nieuwstadt.
 
-<img src="results/reference_results_Pallares.jpg" width="400">
+<img src="results/reference.png" width="800">
 
-<center>Figure. Time averaged (a) velocity and (b) temperature profiles. (c) Reynolds stresses.</center>
+<center>Figure. DNS data of mean temperature and velocity profiles using different Rayleigh numbers </center>
 
 **CharLES results**
 
-<img src="results/U_profile.png" width="400">
+<img src="results/CharLES.png" width="800">
 
-<center>Figure. Time averaged velocity</center>
+<center>Figure. CharLES</center>
+
+**Validation (comparison)**
+
+<img src="results/comparison.png" width="800">
+
+<center>Figure. comparison between DNS data and the results using CharLES</center>
 
 
-
-<img src="results/T_profile.png" width="400">
-
-<center>Figure. Time averaged temperature profiles</center>
-
-<img src="results/U_rms.png" width="400">
-
-<center>Figure. Time averaged Reynolds stresses.</center>
 

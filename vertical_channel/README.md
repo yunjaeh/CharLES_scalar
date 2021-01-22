@@ -10,35 +10,37 @@
 
 ### Velocity and temperature fields
 
-<img src="results/V_Ra_5.4e5.gif" width="400">  <img src="results/T_Ra_5.4e5.gif" width="400">
 
+<img src="results/V_Ra_5.4e5.gif" width="400">  <img src="results/T_Ra_5.4e5.gif" width="400">
 <center>Rayleigh number = 5.4 x 10<sup>5</sup></center>
 
 
-<img src="results/V_Ra_2.0e6.gif" width="400">  <img src="results/T_Ra_2.0e6.gif" width="400">
 
+<img src="results/V_Ra_2.0e6.gif" width="400">  <img src="results/T_Ra_2.0e6.gif" width="400">
 <center>Rayleigh number = 2.0 x 10<sup>6</sup></center>
 
 
-<img src="results/V_Ra_5.0e6.gif" width="400">  <img src="results/T_Ra_5.0e6.gif" width="400">
 
+<img src="results/V_Ra_5.0e6.gif" width="400">  <img src="results/T_Ra_5.0e6.gif" width="400">
 <center>Rayleigh number = 5.0 x 10<sup>6</sup></center>
+
+
 
 ---
 
 
 ## Problem setup
 
-<img src="results/setup.jpg" width="300">
-
+<img src="results/setup.jpg" width="200">
 <center>Figure. setup of vertical channel flow simulation</center>
+
 
 - Domain (d x 12d x 6d, d: channel height), periodic in Y & Z directions -> profiles depend on domain size
 - \# cells: 12.0M (coarse), 53.2M (fine)
 - Prandtl number,\
- <img src="https://render.githubusercontent.com/render/math?math=Pr=\frac{\nu}{\alpha}=0.71" height="30">,
+ <img src="https://render.githubusercontent.com/render/math?math=Pr=\frac{\nu}{\alpha}=0.71" height="30">
 - Rayleigh number,\
- <img src="https://render.githubusercontent.com/render/math?math=Ra=\frac{g\beta(T_H-T_L)d^3}{\nu\alpha}=\frac{g\beta(T_H-T_L)d^3}{\nu^2}\cdot Pr" height="40">
+ <img src="https://render.githubusercontent.com/render/math?math=Ra=Gr\cdot Pr=\frac{g\beta(T_H-T_L)d^3}{\nu\alpha}=\frac{g\beta(T_H-T_L)d^3}{\nu^2}\cdot Pr" height="40">
 
 
 | Ra                   | g    | beta   | T<sub>H</sub>-T<sub>L</sub> | d (h) | nu                       |

@@ -11,16 +11,18 @@
 ## Velocity and temperature fields
 
 **Rayleigh number = 5.4 x 10<sup>5</sup>**
+
 <img src="results/V_Ra_5.4e5.gif" width="400">  <img src="results/T_Ra_5.4e5.gif" width="400">
 
 
 **Rayleigh number = 2.0 x 10<sup>6</sup>**
+
 <img src="results/V_Ra_2.0e6.gif" width="400">  <img src="results/T_Ra_2.0e6.gif" width="400">
 
 
 **Rayleigh number = 5.0 x 10<sup>6</sup>**
-<img src="results/V_Ra_5.0e6.gif" width="400">  <img src="results/T_Ra_5.0e6.gif" width="400">
 
+<img src="results/V_Ra_5.0e6.gif" width="400">  <img src="results/T_Ra_5.0e6.gif" width="400">
 
 
 ---
